@@ -123,7 +123,7 @@ def wpm(typed, elapsed):
     """
     assert elapsed > 0, "Elapsed time must be positive"
     # BEGIN PROBLEM 4
-    return (len(typed) / 5) * (60 / elapsed)
+    return len(typed) / 5
     # END PROBLEM 4
 
 

@@ -61,7 +61,7 @@ def about(subject):
         lower_sentence = lower(sentence)
         nopunc_sentence = remove_punctuation(lower_sentence)
         split_sentence = split(nopunc_sentence)
-        return True if any(i in split_sentence for i in subject) else False
+        return True if (i for i in subject in split_sentence) else False
     return search_in_list
     # END PROBLEM 2
 
@@ -92,20 +92,7 @@ def accuracy(typed, source):
     typed_words = split(typed)
     source_words = split(source)
     # BEGIN PROBLEM 3
-    right_typed = 0
-    k = 0
-    if len(typed) == 0 and len(source) == 0:
-        return 100.0
-    elif len(typed) == 0:
-        return 0.0
-    elif len(source) == 0:
-        return 0.0
-
-    while k < len(typed_words) and k < len(source_words):
-        if typed_words[k] == source_words[k]:
-            right_typed += 1
-        k += 1
-    return right_typed / len(typed_words) * 100
+    "*** YOUR CODE HERE ***"
     # END PROBLEM 3
 
 
@@ -123,7 +110,7 @@ def wpm(typed, elapsed):
     """
     assert elapsed > 0, "Elapsed time must be positive"
     # BEGIN PROBLEM 4
-    return (len(typed) / 5) * (60 / elapsed)
+    "*** YOUR CODE HERE ***"
     # END PROBLEM 4
 
 

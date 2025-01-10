@@ -105,7 +105,9 @@ def accuracy(typed, source):
         if typed_words[k] == source_words[k]:
             right_typed += 1
         k += 1
-    return right_typed / len(typed_words) * 100
+    if len(typed_words) > len(source_words):
+        right_typed += len(typed_words) - len(source_words)
+    return right_typed / len(typed_words)
     # END PROBLEM 3
 
 
@@ -123,7 +125,7 @@ def wpm(typed, elapsed):
     """
     assert elapsed > 0, "Elapsed time must be positive"
     # BEGIN PROBLEM 4
-    return (len(typed) / 5) * (60 / elapsed)
+    "*** YOUR CODE HERE ***"
     # END PROBLEM 4
 
 
