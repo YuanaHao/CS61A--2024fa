@@ -13,7 +13,7 @@ def shuffle(s):
     """
     assert len(s) % 2 == 0, 'len(seq) must be even'
     s0 = s[: len(s) // 2]
-    s1 = s[len(s) // 2 :]
+    s1 = s - s0
     return [s0[i // 2] if i % 2 == 0 else s1[i // 2] for i in range(len(s))]
 
 
