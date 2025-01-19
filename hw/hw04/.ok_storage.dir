@@ -1,1 +1,4 @@
 'shuffle-correct', (0, 66)
+'deep_map-correct', (512, 66)
+'total_mass-correct', (1024, 66)
+'balanced-correct', (1536, 66)

@@ -53,11 +53,13 @@ HW_SOURCE_FILE=__file__
 def planet(mass):
     """Construct a planet of some mass."""
     assert mass > 0
+    "*** YOUR CODE HERE ***"
     return ['planet', mass]
 
 def mass(p):
     """Select the mass of a planet."""
     assert is_planet(p), 'must call mass on a planet'
+    "*** YOUR CODE HERE ***"
     return p[1]
 
 def is_planet(p):
@@ -110,19 +112,8 @@ def balanced(m):
     >>> check(HW_SOURCE_FILE, 'balanced', ['Index'])
     True
     """
-    if not is_mobile(m):
-        return True
-    else:
-        # 检查当前移动装置是否平衡
-        left_torque = total_mass(end(left(m))) * length(left(m))
-        right_torque = total_mass(end(right(m))) * length(right(m))
-        is_current_balanced = left_torque == right_torque
-        
-        # 递归检查两端是否都平衡
-        left_end_balanced = balanced(end(left(m))) if is_mobile(end(left(m))) else True
-        right_end_balanced = balanced(end(right(m))) if is_mobile(end(right(m))) else True
-        
-        return is_current_balanced and left_end_balanced and right_end_balanced
+    "*** YOUR CODE HERE ***"
+
 
 def berry_finder(t):
     """Returns True if t contains a node with the value 'berry' and 
