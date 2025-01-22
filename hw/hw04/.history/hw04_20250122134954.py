@@ -166,7 +166,7 @@ def max_path_sum(t):
     if is_leaf(t):
         return t[0]
     if is_tree(t):
-        return max(label(t) + max_path_sum(i) for i in branches(t))
+        return max([for i in branches(t) label(t) + max_path_sum(i)])
 
 
 def mobile(left, right):

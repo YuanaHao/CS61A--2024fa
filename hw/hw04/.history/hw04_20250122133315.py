@@ -141,8 +141,9 @@ def berry_finder(t):
     >>> berry_finder(t)
     True
     """
-
-    for i in t:
+    print(t)
+    print(branches(t))
+    for i in branches(t):
         if i == 'berry':
             return True
         if type(i) == list:
@@ -163,10 +164,7 @@ def max_path_sum(t):
     >>> max_path_sum(t2) # 5, 2, 10
     17
     """
-    if is_leaf(t):
-        return t[0]
-    if is_tree(t):
-        return max(label(t) + max_path_sum(i) for i in branches(t))
+    "*** YOUR CODE HERE ***"
 
 
 def mobile(left, right):
