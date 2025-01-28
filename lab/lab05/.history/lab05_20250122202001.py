@@ -29,13 +29,13 @@ def insert_items(s, before, after):
     length = len(s)
     i = 0
     while i < length:
-        if s[i] == before:
-            s.insert(i + 1, after)
+        if s[i] == before and before is not after:
+            s.insert(after, i)
             i += 2
-            length += 1
-        else:
+        elif s[i] == before:
+            s.insert(after, i)
             i += 1
-    return s
+        i += 1
 
 
 
@@ -50,12 +50,12 @@ def group_by(s, fn):
     {9: [-3, 3], 4: [-2, 2], 1: [-1, 1], 0: [0]}
     """
     grouped = {}
-    for i in s:
-        key = fn(i)
+    for ____ in ____:
+        key = ____
         if key in grouped:
-            grouped[key].append(i)
+            ____
         else:
-            grouped[key] = [i]
+            grouped[key] = ____
     return grouped
 
 
@@ -80,13 +80,7 @@ def count_occurrences(t, n, x):
     >>> count_occurrences(v, 6, 6)
     2
     """
-    cnt = 0
-    while n > 0:
-        num = next(t)
-        if num == x:
-            cnt += 1
-        n -= 1
-    return cnt
+    "*** YOUR CODE HERE ***"
 
 
 def repeated(t, k):
@@ -109,25 +103,7 @@ def repeated(t, k):
     2
     """
     assert k > 1
-    before_num = 0
-    now_num = 0
-    conunt_times = 0
-    first = True
-    while True: 
-        now_num = next(t)
-        if first is not True:
-            if before_num == now_num:
-                conunt_times += 1
-                if conunt_times == k - 1:
-                    return now_num
-            if before_num != now_num:
-                conunt_times = 0
-            before_num = now_num
-        if first is True:
-            first = False
-            before_num = now_num
-        
-        
+    "*** YOUR CODE HERE ***"
 
 
 def sprout_leaves(t, leaves):

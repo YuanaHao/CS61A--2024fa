@@ -55,7 +55,7 @@ def group_by(s, fn):
         if key in grouped:
             grouped[key].append(i)
         else:
-            grouped[key] = [i]
+            grouped[key] = key
     return grouped
 
 
@@ -80,13 +80,7 @@ def count_occurrences(t, n, x):
     >>> count_occurrences(v, 6, 6)
     2
     """
-    cnt = 0
-    while n > 0:
-        num = next(t)
-        if num == x:
-            cnt += 1
-        n -= 1
-    return cnt
+    "*** YOUR CODE HERE ***"
 
 
 def repeated(t, k):
@@ -109,25 +103,7 @@ def repeated(t, k):
     2
     """
     assert k > 1
-    before_num = 0
-    now_num = 0
-    conunt_times = 0
-    first = True
-    while True: 
-        now_num = next(t)
-        if first is not True:
-            if before_num == now_num:
-                conunt_times += 1
-                if conunt_times == k - 1:
-                    return now_num
-            if before_num != now_num:
-                conunt_times = 0
-            before_num = now_num
-        if first is True:
-            first = False
-            before_num = now_num
-        
-        
+    "*** YOUR CODE HERE ***"
 
 
 def sprout_leaves(t, leaves):

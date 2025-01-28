@@ -115,11 +115,12 @@ def repeated(t, k):
     first = True
     while True: 
         now_num = next(t)
+        if conunt_times == k:
+            return now_num
+        
         if first is not True:
             if before_num == now_num:
                 conunt_times += 1
-                if conunt_times == k - 1:
-                    return now_num
             if before_num != now_num:
                 conunt_times = 0
             before_num = now_num

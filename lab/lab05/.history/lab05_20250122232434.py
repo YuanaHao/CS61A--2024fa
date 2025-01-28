@@ -109,25 +109,14 @@ def repeated(t, k):
     2
     """
     assert k > 1
-    before_num = 0
-    now_num = 0
-    conunt_times = 0
-    first = True
-    while True: 
-        now_num = next(t)
-        if first is not True:
-            if before_num == now_num:
-                conunt_times += 1
-                if conunt_times == k - 1:
-                    return now_num
-            if before_num != now_num:
-                conunt_times = 0
-            before_num = now_num
-        if first is True:
-            first = False
-            before_num = now_num
-        
-        
+    cnt = list
+    num = 0
+    while True:
+        num = next(t)
+        if cnt[num] == k:
+            return num
+        else:
+            cnt[num] += 1
 
 
 def sprout_leaves(t, leaves):

@@ -113,19 +113,17 @@ def repeated(t, k):
     now_num = 0
     conunt_times = 0
     first = True
-    while True: 
-        now_num = next(t)
+    while True:
         if first is not True:
             if before_num == now_num:
                 conunt_times += 1
-                if conunt_times == k - 1:
-                    return now_num
             if before_num != now_num:
                 conunt_times = 0
-            before_num = now_num
         if first is True:
             first = False
-            before_num = now_num
+            before_num = next(t)
+        if conunt_times == k:
+            return now_num
         
         
 
