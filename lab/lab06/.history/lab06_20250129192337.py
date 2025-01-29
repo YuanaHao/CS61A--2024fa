@@ -70,7 +70,7 @@ class BankAccount:
     def __init__(self, account_holder):
         self.balance = 0
         self.holder = account_holder
-        self.transactions = []
+        self.transactions = list[Transaction]
 
     def deposit(self, amount):
         """Increase the account balance by amount, add the deposit
@@ -78,26 +78,16 @@ class BankAccount:
         """
         self.balance = self.balance + amount
         if amount != 0:
-            self.transactions.append(Transaction(len(self.transactions), 
-                                                 self.balance - amount, 
-                                                 self.balance))
+            self.transactions.append(Transaction(self.holder, self.balance - amount, self.balance))
         return self.balance
-
 
     def withdraw(self, amount):
         """Decrease the account balance by amount, add the withdraw
         to the transaction history, and return the new balance.
         """
         if amount > self.balance:
-            self.transactions.append(Transaction(len(self.transactions), 
-                                                 self.balance, 
-                                                 self.balance))
             return 'Insufficient funds'
         self.balance = self.balance - amount
-        if amount != 0:
-            self.transactions.append(Transaction(len(self.transactions), 
-                                                 self.balance + amount, 
-                                                 self.balance))        
         return self.balance
 
 
@@ -124,41 +114,41 @@ class Server:
         """Append the email to the inbox of the client it is addressed to.
             email is an instance of the Email class.
         """
-        self.clients[email.recipient_name].inbox.append(email)
+        ____.inbox.append(email)
 
     def register_client(self, client):
         """Add a client to the clients mapping (which is a 
         dictionary from client names to client instances).
             client is an instance of the Client class.
         """
-        self.clients[client.name] = client
+        ____[____] = ____
 
 class Client:
     """A client has a server, a name (str), and an inbox (list).
 
-    s = Server()
-    a = Client(s, 'Alice')
-    b = Client(s, 'Bob')
-    a.compose('Hello, World!', 'Bob')
-    b.inbox[0].msg
+    >>> s = Server()
+    >>> a = Client(s, 'Alice')
+    >>> b = Client(s, 'Bob')
+    >>> a.compose('Hello, World!', 'Bob')
+    >>> b.inbox[0].msg
     'Hello, World!'
-    a.compose('CS 61A Rocks!', 'Bob')
-    len(b.inbox)
+    >>> a.compose('CS 61A Rocks!', 'Bob')
+    >>> len(b.inbox)
     2
-    b.inbox[1].msg
+    >>> b.inbox[1].msg
     'CS 61A Rocks!'
-    b.inbox[1].sender.name
+    >>> b.inbox[1].sender.name
     'Alice'
     """
     def __init__(self, server, name):
         self.inbox = []
         self.server = server
         self.name = name
-        server.register_client(self)
+        server.register_client(____)
 
     def compose(self, message, recipient_name):
         """Send an email with the given message to the recipient."""
-        email = Email(message, self, recipient_name)
+        email = Email(message, ____, ____)
         self.server.send(email)
 
 
@@ -192,16 +182,15 @@ class Mint:
     125
     """
     present_year = 2024
-    year = 0
 
     def __init__(self):
         self.update()
 
     def create(self, coin):
-        return coin(self.year)
+        "*** YOUR CODE HERE ***"
 
     def update(self):
-        self.year = self.present_year
+        "*** YOUR CODE HERE ***"
 
 class Coin:
     cents = None # will be provided by subclasses, but not by Coin itself
@@ -210,8 +199,7 @@ class Coin:
         self.year = year
 
     def worth(self):
-        age_bonus = max(0, Mint.present_year - self.year - 50)
-        return self.cents + age_bonus
+        "*** YOUR CODE HERE ***"
 
 class Nickel(Coin):
     cents = 5

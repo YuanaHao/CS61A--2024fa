@@ -198,7 +198,9 @@ class Mint:
         self.update()
 
     def create(self, coin):
-        return coin(self.year)
+        class under_coin(Coin):
+            def worth(self):
+                return Coin.worth() + self.
 
     def update(self):
         self.year = self.present_year
@@ -211,7 +213,7 @@ class Coin:
 
     def worth(self):
         age_bonus = max(0, Mint.present_year - self.year - 50)
-        return self.cents + age_bonus
+        return self.cents
 
 class Nickel(Coin):
     cents = 5

@@ -198,7 +198,9 @@ class Mint:
         self.update()
 
     def create(self, coin):
-        return coin(self.year)
+        class under_coin(Coin):
+            def worth(self):
+                return Coin.worth() + self.
 
     def update(self):
         self.year = self.present_year
