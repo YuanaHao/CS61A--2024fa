@@ -66,8 +66,6 @@ def stair_ways(n):
     """
     if n == 0:
         yield []
-    elif n == 1:
-        yield [1]
     else: 
         for way in stair_ways(n - 1):
             yield way + [1]
@@ -111,10 +109,10 @@ def yield_paths(t, value):
     [[0, 2], [0, 2, 1, 2]]
     """
     if label(t) == value:
-        yield [label(t)]
+        yield ____
     for b in branches(t):
-        for path in yield_paths(b, value):
-            yield [label(t)] + path
+        for ____ in ____:
+            yield ____
 
 
 

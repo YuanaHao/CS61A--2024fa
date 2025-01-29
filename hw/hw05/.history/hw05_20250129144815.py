@@ -111,10 +111,10 @@ def yield_paths(t, value):
     [[0, 2], [0, 2, 1, 2]]
     """
     if label(t) == value:
-        yield [label(t)]
+        yield [t[0]]
     for b in branches(t):
-        for path in yield_paths(b, value):
-            yield [label(t)] + path
+        for val in b:
+            yield [val + i for i in :yield_paths(val, value)]
 
 
 
