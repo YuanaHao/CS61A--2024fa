@@ -155,7 +155,7 @@ def deep_map_mut(func, s):
     >>> print(link1)
     <9 <16> 25 36>
     """
-    if s is Link.empty:
+    if s is Link.empty():
         return
     if isinstance(s.first, Link):
         deep_map_mut(func, s.first)

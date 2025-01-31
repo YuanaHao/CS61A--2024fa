@@ -134,7 +134,6 @@ def store_digits(n):
             result = Link(digit)
         else:
             result = Link(digit, result)
-    return result
 
 def deep_map_mut(func, s):
     """Mutates a deep link s by replacing each item found with the
@@ -155,14 +154,7 @@ def deep_map_mut(func, s):
     >>> print(link1)
     <9 <16> 25 36>
     """
-    if s is Link.empty:
-        return
-    if isinstance(s.first, Link):
-        deep_map_mut(func, s.first)
-    else:
-        s.first = func(s.first)
-    deep_map_mut(func, s.rest)
-    
+    "*** YOUR CODE HERE ***"
 
 
 def two_list(vals, counts):

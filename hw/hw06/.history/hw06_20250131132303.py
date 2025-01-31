@@ -59,7 +59,7 @@ class VendingMachine:
 
         E.g., Current candy stock: 3
         """
-        self.stock += n
+        self.stock = n
         return f"Current {self.product} stock: {self.stock}"
 
     def add_funds(self, n):
@@ -73,7 +73,7 @@ class VendingMachine:
         E.g., Current balance: $4
         """
         if self.stock == 0:
-            return f"Nothing left to vend. Please restock. Here is your ${n}."
+            return f"Nothing left to vend. Please restock. Here is your ${n}"
         else:
             self.balance += n
             return f"Current balance: ${self.balance}"
@@ -90,19 +90,14 @@ class VendingMachine:
         E.g., Nothing left to vend. Please restock.
               Please add $3 more funds.
         """
-        if self.stock == 0:
-            return "Nothing left to vend. Please restock."
-        elif self.balance < self.price:
-            return f"Please add ${self.price - self.balance} more funds."
-        elif self.balance > self.price:
+        if self.balance >= self.price:
             self.balance -= self.price
-            self.stock -= 1
-            change, self.balance = self.balance, 0
-            return f"Here is your {self.product} and ${change} change."
-        elif self.balance == self.price:
-            self.stock -= 1
-            return f"Here is your {self.product}."
-            
+            return f"Here is your {self.product} and ${self.balance} change."
+        elif self.balance < self.price:
+            need = self.product - self.balance
+            return f"Please add ${self.product - self.balance} more funds."
+        elif self.stock == 0:
+            return "Nothing left to vend. Please restock."
 
 
 def store_digits(n):
@@ -124,17 +119,8 @@ def store_digits(n):
     >>> cleaned = re.sub(r"#.*\\n", '', re.sub(r'"{3}[\s\S]*?"{3}', '', inspect.getsource(store_digits)))
     >>> print("Do not use str or reversed!") if any([r in cleaned for r in ["str", "reversed"]]) else None
     """
-    if n == 0: 
-        return Link(0)
-    
-    result = None
-    while n > 0:
-        n, digit = n // 10, n % 10
-        if result is None:
-            result = Link(digit)
-        else:
-            result = Link(digit, result)
-    return result
+    "*** YOUR CODE HERE ***"
+
 
 def deep_map_mut(func, s):
     """Mutates a deep link s by replacing each item found with the
@@ -155,14 +141,7 @@ def deep_map_mut(func, s):
     >>> print(link1)
     <9 <16> 25 36>
     """
-    if s is Link.empty:
-        return
-    if isinstance(s.first, Link):
-        deep_map_mut(func, s.first)
-    else:
-        s.first = func(s.first)
-    deep_map_mut(func, s.rest)
-    
+    "*** YOUR CODE HERE ***"
 
 
 def two_list(vals, counts):
