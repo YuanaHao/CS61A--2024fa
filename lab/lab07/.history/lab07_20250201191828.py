@@ -154,7 +154,7 @@ def duplicate_link(s, val):
     >>> z
     Link(1, Link(2, Link(2, Link(2, Link(2, Link(3))))))
     """
-    current = s
+        current = s
     
     # 遍历整个链表
     while current is not Link.empty:

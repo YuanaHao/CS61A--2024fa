@@ -154,18 +154,16 @@ def duplicate_link(s, val):
     >>> z
     Link(1, Link(2, Link(2, Link(2, Link(2, Link(3))))))
     """
-    current = s
-    
-    # 遍历整个链表
-    while current is not Link.empty:
-        if current.first == val:
-            # 在当前值后插入新节点
-            current.rest = Link(val, current.rest)
-            # 跳过新插入的节点
-            current = current.rest
-        current = current.rest
-    
-    return None 
+    node = None
+    temp = None
+    if s.first == val:
+        s.rest = Link(val, s.rest)
+        node = s.rest.rest
+    while not node.rest.empty:
+        while node.first != val:
+            node = node.rest
+        node.rest = Link(val, node.rest)
+        node = node.rest.rest
 
 
 

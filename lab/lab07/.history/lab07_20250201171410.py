@@ -80,21 +80,9 @@ class FreeChecking(Account):
 
     def withdraw(self, amount):
         if amount > self.balance:
-            if self.free_withdrawals > 0:
-                self.free_withdrawals -= 1
-            else:
-                self.balance -= self.withdraw_fee
+            self.free_withdrawals -= 1
             return "Insufficient funds"
-        else:
-            self.balance -= amount
-            if self.free_withdrawals > 0:
-                self.free_withdrawals -= 1
-            else:
-                self.balance -= self.withdraw_fee
-            if self.balance < 0:
-                self.balance = 0
-                return "Insufficient funds"
-            return self.balance
+        else
 
 
 
@@ -111,31 +99,7 @@ def without(s, i):
     >>> without(s, 4) is not s  # Make sure a copy is created
     True
     """
-    if i < 0:
-        return Link(s.first, s.rest)
-    
-    # 处理删除第一个元素的情况
-    if i == 0:
-        return Link(s.rest.first, s.rest.rest)
-    
-    # 创建新的链表
-    result = Link(s.first)
-    current = result
-    curr_s = s.rest
-    pos = 1
-    
-    # 复制到目标位置之前的元素
-    while curr_s is not Link.empty and pos < i:
-        current.rest = Link(curr_s.first)
-        current = current.rest
-        curr_s = curr_s.rest
-        pos += 1
-    
-    # 如果索引有效，跳过要删除的元素
-    if curr_s is not Link.empty and curr_s.rest is not Link.empty:
-        current.rest = Link(curr_s.rest.first, curr_s.rest.rest)
-    
-    return result
+    "*** YOUR CODE HERE ***"
 
 
 def duplicate_link(s, val):
@@ -154,19 +118,7 @@ def duplicate_link(s, val):
     >>> z
     Link(1, Link(2, Link(2, Link(2, Link(2, Link(3))))))
     """
-    current = s
-    
-    # 遍历整个链表
-    while current is not Link.empty:
-        if current.first == val:
-            # 在当前值后插入新节点
-            current.rest = Link(val, current.rest)
-            # 跳过新插入的节点
-            current = current.rest
-        current = current.rest
-    
-    return None 
-
+    "*** YOUR CODE HERE ***"
 
 
 class Link:

@@ -165,7 +165,7 @@ def duplicate_link(s, val):
             current = current.rest
         current = current.rest
     
-    return None 
+    return None
 
 
 
