@@ -1,0 +1,15 @@
+(define (curry-cook formals body) 
+  (let ((curry-name (string->symbol (string-append "curry-" (symbol->string (car formals))))))
+    `(define (,curry-name ,@formals) ,@body)))
+
+(define (curry-consume curry args)
+  'YOUR-CODE-HERE)
+
+(define-macro (switch expr options)
+  (switch-to-cond (list 'switch expr options)))
+
+(define (switch-to-cond switch-expr)
+  (cons _________
+        (map (lambda (option)
+               (cons _______________ (cdr option)))
+             (car (cdr (cdr switch-expr))))))
